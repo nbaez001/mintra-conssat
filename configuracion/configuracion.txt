@@ -1,0 +1,15 @@
+operativolima@hotmail.com
+
+LIMA		ROL ADMINISTRADOR LIMA 	    admin@hotmail.com				 			
+
+LIMA	    ROL CONSSAT LIMA	        conssatlima@hotmail.com	 						
+
+LIMA	    ROL OPERATIVO LIMA	        operativolima@hotmail.com 			
+
+AMAZONAS	ROL ADMINISTRADOR AMAZONAS	admamazonas@hotmail.com		 			
+
+AMAZONAS	ROL CORSSAT AMAZONAS	    corssat@hotmail.com	 
+
+AMAZONAS	ROL OPERATIVO CORSSAT	    rolcorssat@hotmail.com
+
+* CREAR UNA CARPETA EN D:\archivos

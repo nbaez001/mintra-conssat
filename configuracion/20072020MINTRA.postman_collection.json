@@ -1,0 +1,4606 @@
+{
+	"info": {
+		"_postman_id": "db62268c-68ae-4233-a2a1-5a00c3ad37d4",
+		"name": "MINTRA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CONSEJEROS",
+			"item": [
+				{
+					"name": "Registrar Consejero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "docaprob",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/BOLETIN_250620201593126275889.pdf"
+								},
+								{
+									"key": "rEgionfk",
+									"value": "14",
+									"type": "text"
+								},
+								{
+									"key": "cOnsejofk",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cOmisionfk",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vTipdocumento",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocumento",
+									"value": "4234545823",
+									"type": "text"
+								},
+								{
+									"key": "vDesnombre",
+									"value": "JUAN",
+									"type": "text"
+								},
+								{
+									"key": "vDesappaterno",
+									"value": "LOPEZ",
+									"type": "text"
+								},
+								{
+									"key": "vDesapmaterno",
+									"value": "MEDINA",
+									"type": "text"
+								},
+								{
+									"key": "vProfesion",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "vDesemail1",
+									"value": "vladimir@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "vDesemail2",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vEntidad",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "vTpconsejero",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "dFecinicio",
+									"value": "10-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "dFecfin",
+									"value": "14-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocasig",
+									"value": "123456",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/consejeros/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"consejeros",
+								"registrar"
+							]
+						},
+						"description": "datos obligatorios\r\n\r\ncodigo de persona\r\ntipo de consejero\r\nentidad\r\nconsejo\r\nregion"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Consejero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "docaprob",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/DOCPLANTRABAJO_040620201591320380784.pdf"
+								},
+								{
+									"key": "rEgionfk",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "cOnsejofk",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cOmisionfk",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "vTipdocumento",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocumento",
+									"value": "42366823",
+									"type": "text"
+								},
+								{
+									"key": "vDesnombre",
+									"value": "JUAN",
+									"type": "text"
+								},
+								{
+									"key": "vDesappaterno",
+									"value": "LOPEZ",
+									"type": "text"
+								},
+								{
+									"key": "vDesapmaterno",
+									"value": "MEDINA",
+									"type": "text"
+								},
+								{
+									"key": "vProfesion",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "vDesemail1",
+									"value": "vladimir@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "vDesemail2",
+									"value": "vladimir2@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "vEntidad",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "vTpconsejero",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "dFecinicio",
+									"value": "10-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "dFecfin",
+									"value": "14-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocasig",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "cOnsejeroidpk",
+									"value": "136",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/consejeros/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"consejeros",
+								"actualizar"
+							]
+						},
+						"description": "datos obligatorios\r\n\r\ncodigo de persona\r\ntipo de consejero\r\nentidad\r\nconsejo\r\nregion"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Consejeros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/consejeros/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"consejeros",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Consejero",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/consejeros/105",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"consejeros",
+								"105"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Por Varios Criterios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"cOnsejeroidpk\": null,\r\n        \"rEgionfk\": 14,\r\n        \"cOnsejofk\": 1,\r\n        \"cOmisionfk\": null,\r\n        \"vTipdocumento\": null,\r\n        \"vNumdocumento\": null,\r\n        \"vDesnombre\": null,\r\n        \"vDesappaterno\": \"SUNCION\",\r\n        \"vDesapmaterno\": null,\r\n        \"vProfesion\": null,\r\n        \"vDesemail1\":null,\r\n        \"vDesemail2\": null,\r\n        \"vEntidad\": null,\r\n        \"vTpconsejero\": null,\r\n        \"dFecinicio\": null,\r\n        \"dFecfin\":null,\r\n        \"vNumdocasig\": null,\r\n        \"vNombredocasig\":null,\r\n        \"vUbidocasig\": null,\r\n        \"vExtdocasig\": null,\r\n        \"cFlgeliminado\": null,\r\n        \"dFecelimina\": null,\r\n        \"nUsueliminia\": null,\r\n        \"nUsureg\": null,\r\n        \"dFecreg\": null,\r\n        \"nUsumodifica\": null,\r\n        \"dFecmodifica\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/consejeros/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"consejeros",
+								"buscar"
+							]
+						},
+						"description": "{\r\n        \"cOnsejeroidpk\": null,\r\n        \"rEgionfk\": null,\r\n        \"cOnsejofk\": null,\r\n        \"cOmisionfk\": null,\r\n        \"vTipdocumento\": null,\r\n        \"vNumdocumento\": \"42366823\",\r\n        \"vDesnombre\": \"VLADIMR\",\r\n        \"vDesappaterno\": \"SUNCION\",\r\n        \"vDesapmaterno\": \"CESPEDES\",\r\n        \"vProfesion\": null,\r\n        \"vDesemail1\":null,\r\n        \"vDesemail2\": null,\r\n        \"vEntidad\": \"MINTRA\",\r\n        \"vTpconsejero\": null,\r\n        \"dFecinicio\": \"10-02-2020\",\r\n        \"dFecfin\":\"15-02-2020\",\r\n        \"vNumdocasig\": \"1234566\",\r\n        \"vNombredocasig\":null,\r\n        \"vUbidocasig\": null,\r\n        \"vExtdocasig\": null,\r\n        \"cFlgeliminado\": null,\r\n        \"dFecelimina\": null,\r\n        \"nUsueliminia\": null,\r\n        \"nUsureg\": null,\r\n        \"dFecreg\": null,\r\n        \"nUsumodifica\": null,\r\n        \"dFecmodifica\": null\r\n    }"
+					},
+					"response": []
+				},
+				{
+					"name": "Informacion Consejeros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/consejeros/129",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"consejeros",
+								"129"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PLAN DE TRABAJO",
+			"item": [
+				{
+					"name": "Listar Plan de Trabajo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/plantrabajo/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"plantrabajo",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Plan de Trabajo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/plantrabajo/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"plantrabajo",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Plan de Trabajo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "docaprobacion",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/DOC_COMICON_150720201594845770112.pdf"
+								},
+								{
+									"key": "docplantrabajo",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/COMISION_140720201594785708528.pdf"
+								},
+								{
+									"key": "comisionfk",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "dFecaprobacion",
+									"value": "04-06-2020",
+									"type": "text"
+								},
+								{
+									"key": "dFecinicio",
+									"value": "01-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "dFecfin",
+									"value": "05-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocapr",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/plantrabajo/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"plantrabajo",
+								"registrar"
+							]
+						},
+						"description": "los archivos adjuntos son obligatorios y la el codigo de comision"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Plan de Trabajo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "docaprobacion",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "docplantrabajo",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "comisionfk",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "dFecaprobacion",
+									"value": "01-06-2020",
+									"type": "text"
+								},
+								{
+									"key": "dFecinicio",
+									"value": "02-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "dFecfin",
+									"value": "03-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocapr",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "pLantrabidpk",
+									"value": "28",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/plantrabajo/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"plantrabajo",
+								"registrar"
+							]
+						},
+						"description": "los archivos adjuntos son obligatorios y la el codigo de comision"
+					},
+					"response": []
+				},
+				{
+					"name": "Bucar Plan de Trabajo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{      \r\n\"dFecaprobacion\": \"21-06-2020\",\r\n\"dFecaprobacionfin\": null,\r\n\"dFecfin\": null,\r\n\"dFecinicio\": null,\r\n\"vCodigoplantrab\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/plantrabajo/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"plantrabajo",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "REGIONES",
+			"item": [
+				{
+					"name": "Registrar Encargado Region",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "regionpk",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "entidad",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "PEPE",
+									"type": "text"
+								},
+								{
+									"key": "apellidopaterno",
+									"value": "MEDINA",
+									"type": "text"
+								},
+								{
+									"key": "apellidomaterno",
+									"value": "ARRIAGA",
+									"type": "text"
+								},
+								{
+									"key": "tipodoc",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "numerodocumento",
+									"value": "423655685",
+									"type": "text"
+								},
+								{
+									"key": "numerocelular",
+									"value": "945856265",
+									"type": "text"
+								},
+								{
+									"key": "fechadocaprobacion",
+									"value": "10-10-2020",
+									"type": "text"
+								},
+								{
+									"key": "docaprob",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/DOCASIGNACION_040720201593843304259.pdf"
+								},
+								{
+									"key": "numdocaprobacion",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/encargadoregion/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"encargadoregion",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Encargado Region",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "regionpk",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "numerodocumento",
+									"value": "42365568",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/encargadoregion/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"encargadoregion",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Encargado Region",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "regionpk",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "entidad",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "PEPEX",
+									"type": "text"
+								},
+								{
+									"key": "apellidopaterno",
+									"value": "MEDINAX",
+									"type": "text"
+								},
+								{
+									"key": "apellidomaterno",
+									"value": "ARRIAGAX",
+									"type": "text"
+								},
+								{
+									"key": "tipodoc",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "numerodocumento",
+									"value": "423655680",
+									"type": "text"
+								},
+								{
+									"key": "numerocelular",
+									"value": "945856260",
+									"type": "text"
+								},
+								{
+									"key": "fechadocaprobacion",
+									"value": "15-10-2020",
+									"type": "text"
+								},
+								{
+									"key": "docaprob",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/DOCASIGNACION_040720201593843304259.pdf"
+								},
+								{
+									"key": "eNcargadoregionidpk",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "numdocaprobacion",
+									"value": "654321",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/encargadoregion/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"encargadoregion",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Informacion Region",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/encargadoregion/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"encargadoregion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Region",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/encargadoregion/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"encargadoregion",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/encargadoregion/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"encargadoregion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descargar archivo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/encargadoregion/descargar/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"encargadoregion",
+								"descargar",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SESIONES",
+			"item": [
+				{
+					"name": "ASISTENCIAS",
+					"item": [
+						{
+							"name": "Cabecera Sesion",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/asistencia/17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"asistencia",
+										"17"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar/Registrar Asistentes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/asistencia/listarasistentes/37",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"asistencia",
+										"listarasistentes",
+										"37"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Informacion Asistencia",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/asistencia/info/39",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"asistencia",
+										"info",
+										"39"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Invitados",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "entidad",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "sEsionfk",
+											"value": "17",
+											"type": "text"
+										},
+										{
+											"key": "tipodocumento",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "vNumerodocumento",
+											"value": "4236588",
+											"type": "text"
+										},
+										{
+											"key": "vNombre",
+											"value": "MARIA",
+											"type": "text"
+										},
+										{
+											"key": "vApellido_paterno",
+											"value": "PEREZ",
+											"type": "text"
+										},
+										{
+											"key": "vApellido_materno",
+											"value": "REVILLA",
+											"type": "text"
+										},
+										{
+											"key": "vNumerocelular",
+											"value": "12548",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/asistencia/registrarinvitado",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"asistencia",
+										"registrarinvitado"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Asistencia",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idAsistencia",
+											"value": "39",
+											"type": "text"
+										},
+										{
+											"key": "horaEntrada",
+											"value": "11:00",
+											"type": "text"
+										},
+										{
+											"key": "horaSalida",
+											"value": "14:00",
+											"type": "text"
+										},
+										{
+											"key": "asistio",
+											"value": "",
+											"type": "text"
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/asistencia/actualizar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"asistencia",
+										"actualizar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Subir Documento de Asistencia",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "docasistencia",
+											"type": "file",
+											"src": "/C:/Users/VLADIMIR_LPT/Desktop/DOC_APROPLAN_150620201592259976245.pdf"
+										},
+										{
+											"key": "sesioncodigo",
+											"value": "30",
+											"type": "text"
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/asistencia/cargardocasistencia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"asistencia",
+										"cargardocasistencia"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "TEMAS",
+					"item": [
+						{
+							"name": "Info Sesion - Cabecera Tema",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/temas/25",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"temas",
+										"25"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Temas Por Sesion",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/temas/temasporsesion/36",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"temas",
+										"temasporsesion",
+										"36"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Tema",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "docAdjunto1",
+											"type": "file",
+											"src": "/C:/Users/VLADIMIR_LPT/Desktop/Nueva carpeta (2)/Nueva carpeta/01 PROPUESTA VLADIMIR/anexo 08.pdf"
+										},
+										{
+											"key": "docAdjunto2",
+											"type": "file",
+											"src": "/C:/Users/VLADIMIR_LPT/Desktop/Nueva carpeta (2)/Nueva carpeta/01 PROPUESTA VLADIMIR/Anexo 09.pdf"
+										},
+										{
+											"key": "docAdjunto3",
+											"type": "file",
+											"src": "/C:/Users/VLADIMIR_LPT/Desktop/Nueva carpeta (2)/Nueva carpeta/01 PROPUESTA VLADIMIR/ANEXO N 01. DDJJ TDR.pdf"
+										},
+										{
+											"key": "sEsionfk",
+											"value": "29",
+											"type": "text"
+										},
+										{
+											"key": "tIpotemafk",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "vDescripcion",
+											"value": "TEMA TRES DE PRIEBA",
+											"type": "text"
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/temas/registrar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"temas",
+										"registrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Tema",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/temas/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"temas",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "ACTAS",
+					"item": [
+						{
+							"name": "ACUERDOS",
+							"item": [
+								{
+									"name": "ACCIONES",
+									"item": [
+										{
+											"name": "Listar Acciones Por Acuerdo",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9095/api/acciones/accionesporacuerdo/9",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9095",
+													"path": [
+														"api",
+														"acciones",
+														"accionesporacuerdo",
+														"9"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Registrar Acciones",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "idacuerdo",
+															"value": "9",
+															"type": "text"
+														},
+														{
+															"key": "identidad",
+															"value": "3",
+															"type": "text"
+														},
+														{
+															"key": "responsable",
+															"value": "PEPE MIRANDA SAVEDRA",
+															"type": "text"
+														},
+														{
+															"key": "fecha_ejecutara",
+															"value": "14-06-2020",
+															"type": "text"
+														},
+														{
+															"key": "fecha_ejecuto",
+															"value": "16-06-2020",
+															"type": "text"
+														},
+														{
+															"key": "docaccion",
+															"type": "file",
+															"src": "/C:/Users/VLADIMIR_LPT/Desktop/Nueva carpeta (2)/Nueva carpeta/01 PROPUESTA VLADIMIR/ANEXO N 05. DDJJ PLAZO.pdf"
+														},
+														{
+															"key": "descripcionaccion",
+															"value": "descripcion de la accion",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:9095/api/acciones/registrar",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9095",
+													"path": [
+														"api",
+														"acciones",
+														"registrar"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Actualizar Accion",
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "idaccion",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "fecha_ejecuto",
+															"value": "15-01-2019",
+															"type": "text"
+														},
+														{
+															"key": "docaccion",
+															"type": "file",
+															"src": "/C:/Users/VLADIMIR_LPT/Desktop/Nueva carpeta (2)/Nueva carpeta/01 PROPUESTA VLADIMIR/CONSTANCIA DEL RNP.pdf"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:9095/api/acciones/actualizar",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9095",
+													"path": [
+														"api",
+														"acciones",
+														"actualizar"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Informacion Accion",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9095/api/acciones/2",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9095",
+													"path": [
+														"api",
+														"acciones",
+														"2"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Eliminar Accion",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:9095/api/acciones/2",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "9095",
+													"path": [
+														"api",
+														"acciones",
+														"2"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"protocolProfileBehavior": {},
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Acuerdo Por Acta",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:9095/api/acuerdos/acuerdosporacta/50",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9095",
+											"path": [
+												"api",
+												"acuerdos",
+												"acuerdosporacta",
+												"50"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Registrar Acuerdos",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "actafk",
+													"value": "50",
+													"type": "text"
+												},
+												{
+													"key": "vResponsable",
+													"value": "VLADIMRI SUNCION",
+													"type": "text"
+												},
+												{
+													"key": "vDesacuerdo",
+													"value": "DESCRIPCION ACUERDO 3",
+													"type": "text"
+												},
+												{
+													"key": "entidadfk",
+													"value": "8",
+													"type": "text"
+												},
+												{
+													"key": "dFecatencion",
+													"value": "10-06-2020",
+													"type": "text"
+												}
+											],
+											"options": {
+												"formdata": {}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9095/api/actas/registraracuerdos",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9095",
+											"path": [
+												"api",
+												"actas",
+												"registraracuerdos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Bucar Actas Por Sesion",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "tiposesion",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "fechainicio",
+													"value": "08-06-2020",
+													"type": "text"
+												},
+												{
+													"key": "fechafin",
+													"value": "10-06-2020",
+													"type": "text"
+												},
+												{
+													"key": "codigosesion",
+													"value": "",
+													"type": "text"
+												}
+											],
+											"options": {
+												"formdata": {}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9095/api/acuerdos/buscaracuerdosporsesion",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9095",
+											"path": [
+												"api",
+												"acuerdos",
+												"buscaracuerdosporsesion"
+											]
+										},
+										"description": "Se buscaran las actas por sesion y que contenga acuerdos si no los contiene no los muestra"
+									},
+									"response": []
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Cabecera Acta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/actas/25",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"25"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Actas",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "docacta",
+											"type": "file",
+											"src": "/C:/Users/VLADIMIR_LPT/Desktop/Nueva carpeta (2)/Nueva carpeta/01 PROPUESTA VLADIMIR/anexo 08.pdf"
+										},
+										{
+											"key": "sesionfk",
+											"value": "29",
+											"type": "text"
+										},
+										{
+											"key": "fecha_acta",
+											"value": "10-06-2020",
+											"type": "text"
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/actas/registrar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"registrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Acta Por Sesion",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vCodigoSesion\" : \"\",\r\n    \"nTipoSesion\"   : \"\",\r\n    \"vfechaInicio\"  : \"\",\r\n    \"vfechafin\"     : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/actas/actaporsesion/54",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"actaporsesion",
+										"54"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Firmantes  Por el Acta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/actas/listarfirmantesporacta/29",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"listarfirmantesporacta",
+										"29"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Firmantes",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fIrmanteidpk",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "actas",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "vEntidad",
+											"value": "dsd",
+											"type": "text"
+										},
+										{
+											"key": "vTipodocumento",
+											"value": "sds",
+											"type": "text"
+										},
+										{
+											"key": "vNumerodocumento",
+											"value": "dsdsd",
+											"type": "text"
+										},
+										{
+											"key": "vNombre",
+											"value": "dwdwd",
+											"type": "text"
+										},
+										{
+											"key": "vTipo",
+											"value": "wd",
+											"type": "text"
+										},
+										{
+											"key": "cFlgasistio",
+											"value": "0",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/actas/actualizarfirmante",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"actualizarfirmante"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Informacion Firmante",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/firmantes/7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"firmantes",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Acuerdos Por Acta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/actas/listaracuerdosporacta/54",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"listaracuerdosporacta",
+										"54"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Listar Sesiones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/sesion/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"sesion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Asistencias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigosesion",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "tiposesion",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "fechainicio",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "fechafin",
+									"value": "",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/sesion/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"sesion",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Sesion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "consejofk",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cOmisionfk",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "tiposesion",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "dFecreacion",
+									"value": "10-06-2020",
+									"type": "text"
+								},
+								{
+									"key": "dHorinicio",
+									"value": "12:00:00",
+									"type": "text"
+								},
+								{
+									"key": "dHorfin",
+									"value": "18:00:30",
+									"type": "text"
+								},
+								{
+									"key": "codusuario",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/sesion/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"sesion",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Sesion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "consejofk",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "cOmisionfk",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "tiposesion",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "dFecreacion",
+									"value": "10-06-2020",
+									"type": "text"
+								},
+								{
+									"key": "dHorinicio",
+									"value": "18:00:00",
+									"type": "text"
+								},
+								{
+									"key": "dHorfin",
+									"value": "18:00:30",
+									"type": "text"
+								},
+								{
+									"key": "codusuario",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "sEsionidpk",
+									"value": "18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/sesion/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"sesion",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Sesion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/sesion/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"sesion",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Acuerdo en Acta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/acuerdos/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"acuerdos",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "INFORMES",
+			"item": [
+				{
+					"name": "Registrar Informe de gestion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vCodinforme",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "vSesion",
+									"value": "25-06-2020",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocap",
+									"value": "45577",
+									"type": "text"
+								},
+								{
+									"key": "comision",
+									"value": "qewwqewe",
+									"type": "text"
+								},
+								{
+									"key": "dFecdesde",
+									"value": "15-02-2020",
+									"type": "text"
+								},
+								{
+									"key": "docboletin",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Desktop/Sistema respiratorio.pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/informes/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"informes",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Informe de gestion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "comision",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vCodinforme",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vSesion",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocap",
+									"value": "4443434",
+									"type": "text"
+								},
+								{
+									"key": "dFecdesde",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "dFhasta",
+									"value": "",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/informes/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"informes",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Informe de gestion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "iNformeidpk",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "vCodinforme",
+									"value": "5636346",
+									"type": "text"
+								},
+								{
+									"key": "vSesion",
+									"value": "245-06-2020",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocap",
+									"value": "4443434",
+									"type": "text"
+								},
+								{
+									"key": "comision",
+									"value": "1111",
+									"type": "text"
+								},
+								{
+									"key": "dFecdesde",
+									"value": "23-10-2020",
+									"type": "text"
+								},
+								{
+									"key": "docboletin",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/1251660-278-20200629110716.pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/informes/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"informes",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Informes de gestion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/informes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"informes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Informe de Gestion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/informes/30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"informes",
+								"30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descargar Informe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/informes/descargar/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"informes",
+								"descargar",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar sesion Por Codigo ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombresesion",
+									"value": "SESION",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/sesion/buscarpornombre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"sesion",
+								"buscarpornombre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Comision por codigo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombrecomision",
+									"value": "1111",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/comisiones/buscarpornombre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"comisiones",
+								"buscarpornombre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Informacion Informe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/informes/29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"informes",
+								"29"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "BOLETINES",
+			"item": [
+				{
+					"name": "Registrar Boletin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoboletin",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/1251660-278-20200629110716.pdf"
+								},
+								{
+									"key": "fecha",
+									"value": "20-10-2020",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/boletines/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"boletines",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Boletin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivoboletin",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/1251660-278-20200629110716.pdf"
+								},
+								{
+									"key": "fecha",
+									"value": "19-10-2020",
+									"type": "text"
+								},
+								{
+									"key": "codigoboletin",
+									"value": "24",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/boletines/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"boletines",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Boletin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/boletines/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"boletines",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bucar Boletines",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vNumbol\" : \"BOLETIN-2020-0002\",\r\n    \"vFecdesde\" : null,\r\n    \"vFechasta\" :null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/boletines/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"boletines",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Informacion Boletin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/boletines/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"boletines",
+								"26"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CALENDARIO",
+			"item": [
+				{
+					"name": "PARTICIPANTES",
+					"item": [
+						{
+							"name": "Registrar Participantes",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nCalendiariofk\":23,\r\n    \"vNombre\" : \"VLADIMIR\",\r\n    \"vApellidoPaterno\": \"SUNCION\",\r\n    \"vApellidoMaterno\": \"CESPEDES\",\r\n    \"nTipodocumento\":\"2\",\r\n    \"vNumerodocumento\" : \"42365658\",\r\n    \"nEntidad\" : 4,\r\n    \"vCorreo\" : \"vladimir_sc@hotmail.com\",\r\n    \"dFecactividad\":\"10-12-2020\",\r\n    \"comision\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/particicalendario/registrar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"particicalendario",
+										"registrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Participantes Por Calendario",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/particicalendario/listaparticipantes/15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"particicalendario",
+										"listaparticipantes",
+										"15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Participante del Calendario",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/particicalendario/22",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"particicalendario",
+										"22"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Registrar Calendario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cOmisionfk\":      \"\",\r\n    \"vDesactividad\":   \"ACTIVIDAD 3\",\r\n    \"vFechaActividad\": \"02-08-2020\",\r\n    \"vHorainicio\":     \"10:30 PM\",\r\n    \"vHorafin\":        \"12:30 AM\",\r\n    \"cFlgejecuto\":     \"0\",\r\n    \"dFecejecuto\":     \"05-10-2020\",\r\n    \"vDesejecucion\":   \"EJECUTO ENSEGUIDA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/calendario/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"calendario",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Calendario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cAlendarioidpk\" : 21,\r\n    \"cOmisionfk\":      \"yyyy\",\r\n    \"vDesactividad\":   \"ACTIVIDAD 1y\",\r\n    \"vFechaActividad\": \"25-06-2020\",\r\n    \"vHorainicio\":     \"12:30 PM\",\r\n    \"vHorafin\":        \"20:30 AM\",\r\n    \"cFlgejecuto\":     null,\r\n    \"dFecejecuto\":     \"18-10-2020\",\r\n    \"vDesejecucion\":   \"EJECUTO ENSEGUIDA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/calendario/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"calendario",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Informacion Calendario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/calendario/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"calendario",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Calendario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/calendario/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"calendario",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Calendario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/calendario/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"calendario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Calendario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vCoidigoComision\" : \"null\",\r\n    \"vDesactividad\" : null,\r\n\t\"vFechaInicioActividad\" : null,\r\n\t\"vFechaFinActividad\" : null,\r\n    \"cFlgejecuto\" : \"1\",\r\n\t\"vFechaActividad\" :  \"05-07-2020\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/calendario/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"calendario",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "COMISION",
+			"item": [
+				{
+					"name": "CONSEJEROS",
+					"item": [
+						{
+							"name": "Registrar o lista Consejeros por Comision",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/comisiconsej/consejeroscomision/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"comisiconsej",
+										"consejeroscomision",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar el Tipo Consejero al Consejero",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "codcomiconsejero",
+											"value": "25",
+											"type": "text"
+										},
+										{
+											"key": "vtipoconsejero",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "vfechainicio",
+											"value": "10-10-2020",
+											"type": "text"
+										},
+										{
+											"key": "vfechafin",
+											"value": "15-10-2020",
+											"type": "text"
+										},
+										{
+											"key": "vnumerodocumento",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "vdocumento",
+											"type": "file",
+											"src": "/C:/Users/VLADIMIR_LPT/Downloads/COMISION_140720201594785708528.pdf"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/comisiconsej/actualizar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"comisiconsej",
+										"actualizar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Informacion Encargado Comision",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/comisiconsej/25",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"comisiconsej",
+										"25"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Consejero",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/comisiconsej/18",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"comisiconsej",
+										"18"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Descargar Archivo Consejero",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/comisiconsej/descargar/25",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"comisiconsej",
+										"descargar",
+										"25"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Registrar Comisiones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tipocomision",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "numerodocaprobacion",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "fechaaprobacion",
+									"value": "10-12-2020",
+									"type": "text"
+								},
+								{
+									"key": "archivocomision",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/1251660-278-20200629110716.pdf"
+								},
+								{
+									"key": "fechainicio",
+									"value": "15-12-2020",
+									"type": "text"
+								},
+								{
+									"key": "fechafin",
+									"value": "20-12-2020",
+									"type": "text"
+								},
+								{
+									"key": "consejeroasignado",
+									"value": "136",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/comisiones/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"comisiones",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Comisiones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tipocomision",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "numerodocaprobacion",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "fechaaprobacion",
+									"value": "15-12-2020",
+									"type": "text"
+								},
+								{
+									"key": "archivocomision",
+									"type": "file",
+									"src": "/C:/Users/VLADIMIR_LPT/Downloads/1251660-278-20200629110716.pdf"
+								},
+								{
+									"key": "fechainicio",
+									"value": "10-12-2020",
+									"type": "text"
+								},
+								{
+									"key": "fechafin",
+									"value": "21-12-2020",
+									"type": "text"
+								},
+								{
+									"key": "consejeroasignado",
+									"value": "136",
+									"type": "text"
+								},
+								{
+									"key": "codigocomision",
+									"value": "16",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/comisiones/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"comisiones",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Informacion de la Comision",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/comisiones/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"comisiones",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Comision",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/comisiones/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"comisiones",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Comisiones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/comisiones/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"comisiones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descargar Archivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/comisiones/descargar/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"comisiones",
+								"descargar",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar comision",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vCodcomision\" :  \"\",\r\n  \"nombrencargado\" : \"EUSEBIO\" ,\r\n   \"vNumdocapr\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/comisiones/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"comisiones",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FIJAS",
+			"item": [
+				{
+					"name": "01 Listar Entidades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listarentidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listarentidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 Buscar Entidad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscarentidad/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscarentidad",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 Listar Profesiones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listarprofesiones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listarprofesiones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 Buscar Profesion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscarprofesion/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscarprofesion",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 Listar Tipo Documentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listartipodocumentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listartipodocumentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06 Buscar Tipo Documento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscartipodocumento/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscartipodocumento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07 Listar Tipo de Consejero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listartipoconsejeros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listartipoconsejeros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08 Buscar Tipo de Consejero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscartipoconsejero/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscartipoconsejero",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09 Listar Regiones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listaregiones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listaregiones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10 Buscar Region",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscaregion/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscaregion",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11 Listar Tipo Consejo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listartipoconsejo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listartipoconsejo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12 Bucar Consejo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscarconsejo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscarconsejo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13 Listar Tipo de Comision",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listartipocomisiones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listartipocomisiones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14 Buscar Tipo de Comision",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscartipocomision/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscartipocomision",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15 Listar Tipo de Sesion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listartiposesion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listartiposesion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "16 Buscar Tipo de Sesion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscarsesion/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscarsesion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "17 Listar  Tipo Temas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listartemas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listartemas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "18 Buscar Tipo Tema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/buscartema/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"buscartema",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "19 Listar Roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/fijas/listaroles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"fijas",
+								"listaroles"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SEGURIDAD",
+			"item": [
+				{
+					"name": "ROLES DE USUARIO",
+					"item": [
+						{
+							"name": "Desactivar Rol Por usuario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/roles/desactivar/42",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"roles",
+										"desactivar",
+										"42"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Activar Rol por Usuario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/roles/activar/42",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"roles",
+										"activar",
+										"42"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Roles por Usuario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/roles/34",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"roles",
+										"34"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Roles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idusuario",
+											"value": "34",
+											"type": "text"
+										},
+										{
+											"key": "idrol",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/roles/registrar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"roles",
+										"registrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Rol",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/roles/34",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"roles",
+										"34"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Registrar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tipodocumento",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "vNombre",
+									"value": "SHARONx",
+									"type": "text"
+								},
+								{
+									"key": "vAppaterno",
+									"value": "SUNCIONx",
+									"type": "text"
+								},
+								{
+									"key": "vApmaterno",
+									"value": "ESTRELLAx",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocumento",
+									"value": "423668241",
+									"type": "text"
+								},
+								{
+									"key": "vClave",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "vCorreo",
+									"value": "sharon21@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "14",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/seguridad/registrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"seguridad",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tipodocumento",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "vNombre",
+									"value": "SHARONx",
+									"type": "text"
+								},
+								{
+									"key": "vAppaterno",
+									"value": "SUNCIONx",
+									"type": "text"
+								},
+								{
+									"key": "vApmaterno",
+									"value": "ESTRELLAx",
+									"type": "text"
+								},
+								{
+									"key": "vNumdocumento",
+									"value": "423668241",
+									"type": "text"
+								},
+								{
+									"key": "vCorreo",
+									"value": "sharon21@hotmail.co",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "14",
+									"type": "text"
+								},
+								{
+									"key": "idusuario",
+									"value": "34",
+									"type": "text"
+								},
+								{
+									"key": "vClave",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/seguridad/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"seguridad",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "angularapp",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "54321",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "vladimir1@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuario Por Region",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/seguridad/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"seguridad",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/seguridad/eliminar/34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"seguridad",
+								"eliminar",
+								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tipodocumento",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "numerodocumento",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "apellidopaterno",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "apellidomaterno",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "14",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9095/api/seguridad/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"seguridad",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Informacion Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvbm9tYnJlIjoiVkxBRElNSVIsU1VOQ0lPTiBDRVNQRURFUyIsImluZm9yZWdpb25jb2RpZ28iOiIxNCIsInVzZXJfbmFtZSI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJpbmZvdXN1YXJpbyI6InZsYWRpbWlyMUBob3RtYWlsLmNvbSIsImluZm9yZWdpb24iOiJMaW1hIiwiZXhwIjoxNjA0NDUzNTIwLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUNPTlNTQVQiXSwianRpIjoiNjU0YTZkOTctN2MzMC00ZjhiLTlmODctYTdlNDE1MzUyYTExIiwiY2xpZW50X2lkIjoiYW5ndWxhcmFwcCJ9.TabDlhlj1BsfIRLcw21tC3HUdN6z9lvVxFEb2xMRV4xeXe0vk9mHyRNl9gtqUKohiPjOUeCDHX5n_KfrcGiP6hFWP6RWu-wDyAoMJ_eubueEkBKZ-YbdwygVJ3Igob_GYcQ-NYfEAqGMYWHKRT6w-SOSRFm-DXNbAxEvUqyaiu0miXtuejbjiMDI9PPfJlzegh9DVJgYiuISvUEL6_D4uiO5LhWoq09Bmwhtp43bkun0LefI7Qry3U3YToTwq9HNNBhWu-cp45Ww4_uvzGGqKDIryXhuYQOYc07cIyiqFFYcTlrUub-3fSYHCyn7RFElIDH290s9ptcyzbsAAq2qIg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9095/api/seguridad/34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9095",
+							"path": [
+								"api",
+								"seguridad",
+								"34"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SEGUIMIENTOS DE ACUERDO",
+			"item": [
+				{
+					"name": "01 PAGINA PRINCIPAL - LISTAR ACTA POR SESION",
+					"item": [
+						{
+							"name": "Listar Actas por Sesion - principal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nregion\" : 14\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/actas/listarActasPorSesion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"listarActasPorSesion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar Acuerdos Por Temas",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"vCodigoSesion\" : \"SESION-2020-0001\",\r\n \"nTipoSesion\"  : \"\",\r\n \"vfechaInicio\"  : \"\",\r\n \"vfechafin\"  : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/actas/buscartemasporsesion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"buscartemasporsesion"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "02 ACUERDOS POR ACTA",
+					"item": [
+						{
+							"name": "Listar Acuerdos Por Acta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/acuerdos/acuerdosporacta/59",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"acuerdos",
+										"acuerdosporacta",
+										"59"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "01 Informacion de la Cabecera",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/actas/59",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"actas",
+										"59"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "03 ACCIONES POR ACUERDO",
+					"item": [
+						{
+							"name": "01 Cabecera Informacion sesion,acta y acuerdo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/acuerdos/34",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"acuerdos",
+										"34"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "02 Listar Acciones por acuerdo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/acciones/accionesporacuerdo/34",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"acciones",
+										"accionesporacuerdo",
+										"34"
+									]
+								},
+								"description": "el id es el codigo del acuerdo"
+							},
+							"response": []
+						},
+						{
+							"name": "03 egistrar Accion Por Acuerdo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idacuerdo",
+											"value": "34",
+											"type": "text"
+										},
+										{
+											"key": "identidad",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "responsable",
+											"value": "RESPONSABLE ACCION",
+											"type": "text"
+										},
+										{
+											"key": "descripcionaccion",
+											"value": "ACCION 2",
+											"type": "text"
+										},
+										{
+											"key": "fecha_ejecutara",
+											"value": "28-06-2020",
+											"type": "text"
+										},
+										{
+											"key": "fecha_ejecuto",
+											"value": "30-06-2020",
+											"type": "text"
+										},
+										{
+											"key": "docaccion",
+											"type": "file",
+											"src": "/C:/Users/VLADIMIR_LPT/Downloads/OS000206-RUC 10417145279-PRODUCTO 4.pdf"
+										},
+										{
+											"key": "flgejecuto",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:9095/api/acciones/registrar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"acciones",
+										"registrar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "04 Eliminar Accion",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/acciones/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"acciones",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "05 Descargar Archivo de accion",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9095/api/acciones/descargar/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9095",
+									"path": [
+										"api",
+										"acciones",
+										"descargar",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
