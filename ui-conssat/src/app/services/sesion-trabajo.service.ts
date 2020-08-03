@@ -307,35 +307,30 @@ export class SesionTrabajoService {
     return this.http.get<FirmantesResponse[]>(`${backendUrl}api/actas/listarfirmantesporacta/${id}`, httpOptions);
   }
 
-  public decargarDocAsistentes(idSesion: number): Observable<any> {
+  verificarDocAsistentes(idSesion: number): Observable<any> {
     const httpOptions = {
-      responseType: 'blob' as 'json',
+      headers: new HttpHeaders({
+        authorization: 'Bearer ' + Cookie.get('access_token_fc'),
+        id_usuario: Cookie.get('idusuario'),
+        info_regioncodigo: Cookie.get('inforegioncodigo'),
+        info_rol: Cookie.get('idrol')
+      })
     };
-
-    return this.http.get<any>(`${backendUrl}api/asistencia/descargar/${idSesion}`, httpOptions);
+    return this.http.get<any>(`${backendUrl}api/asistencia/verificarasistencia/${idSesion}`, httpOptions);
   }
 
-  public crearBlobFile(data: any): Blob {
-    const byteCharacters = atob(data);
-    const byteNumbers = new Array(byteCharacters.length);
-
-    for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-
-    const byteArray = new Uint8Array(byteNumbers);
-    const blob = new Blob([byteArray], { type: 'application/pdf' });
-    const resultBlob: any = blob;
-    resultBlob.lastModifiedDate = new Date();
-    // resultBlob.name = data.name;
-    return resultBlob;
-    // ABRIR ARCHIVO
-
-
-    // window.open(window.URL.createObjectURL(blob), "_blank");
+  decargarDocAsistentes(idSesion: number): Observable<HttpResponse<Blob>> {
+    return this.http.get<Blob>(`${backendUrl}api/asistencia/descargar/${idSesion}`, {
+      observe: 'response',
+      responseType: 'blob' as 'json',
+      headers: new HttpHeaders({
+        authorization: 'Bearer ' + Cookie.get('access_token_fc'),
+        id_usuario: Cookie.get('idusuario'),
+        info_regioncodigo: Cookie.get('inforegioncodigo'),
+        info_rol: Cookie.get('idrol')
+      })
+    });
   }
-
-  // descargar archivos
 
   public descargarArchivo(data: Blob): void {
     const blob = new Blob([data], { type: 'application/pdf' });

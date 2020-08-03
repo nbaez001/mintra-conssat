@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Calendarios;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Consejos;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Regiones;
@@ -29,7 +30,7 @@ import pe.gob.mtpe.sivice.externo.core.negocio.service.FijasService;
 import pe.gob.mtpe.sivice.externo.core.util.ConstantesUtil;
 
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "http://localhost:4200", "*" })
 @RestController
 @RequestMapping({ "/api/calendario" })
 public class ControladorCalendarios {
@@ -42,6 +43,9 @@ public class ControladorCalendarios {
 	@Autowired
 	private  FijasService fijasService;
 
+	
+	
+	@ApiOperation(value = "Listar Calendarios")
 	@GetMapping("/")
 	public List<Calendarios> listar(
 			@RequestHeader(name = "id_usuario", required = true) Long idUsuario,
@@ -53,9 +57,16 @@ public class ControladorCalendarios {
 		
 		Calendarios calendario = new Calendarios();
 		calendario.setRegion(region);
+		
+		Consejos consejos = new Consejos();
+		consejos.setcOnsejoidpk(fijasService.BuscarConsejoPorNombre(nombreRol));
+		calendario.setConsejo(consejos);
+		
 		return calendarioService.listar(calendario);
 	}
 
+	
+	@ApiOperation(value = "Mostrar informacion calendario por su identificador")
 	@GetMapping("/{id}")
 	public ResponseEntity<?> buscar(
 			@PathVariable Long id,
@@ -66,15 +77,7 @@ public class ControladorCalendarios {
 		generico.setcAlendarioidpk(id);
 		Map<String, Object> response = new HashMap<>();
 		try {
-			
-			generico = calendarioService.buscarPorId(generico);
-			if (generico == null) {
-				response.put(ConstantesUtil.X_MENSAJE, ConstantesUtil.CALENDARIO_MSG_ERROR_BUSCAR);
-				response.put(ConstantesUtil.X_ERROR, ConstantesUtil.CALENDARIO_ERROR_BUSCAR);
-				response.put(ConstantesUtil.X_ENTIDAD, generico);
-				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
-			}
-			
+		
 			generico = calendarioService.buscarPorId(generico);
 		} catch (DataAccessException e) {
 			response.put(ConstantesUtil.X_MENSAJE, ConstantesUtil.GENERAL_MSG_ERROR_BASE);
@@ -86,6 +89,9 @@ public class ControladorCalendarios {
 		return new ResponseEntity<Calendarios>(generico,HttpStatus.OK);
 	}
 
+	
+	
+	@ApiOperation(value = "Buscar calendario por criterios de busqueda")
 	@PostMapping("/buscar")
 	public List<Calendarios> buscar(
 			@RequestBody Calendarios buscar,
@@ -99,6 +105,9 @@ public class ControladorCalendarios {
 		return calendarioService.buscar(buscar);
 	}
 
+	
+	
+	@ApiOperation(value = "Registrar un calendario")
 	@PostMapping("/registrar")
 	public ResponseEntity<?> registrar(
 			@RequestBody Calendarios calendarios,
@@ -134,6 +143,8 @@ public class ControladorCalendarios {
 		return new ResponseEntity<Calendarios>(calendarios,HttpStatus.CREATED);
 	}
 
+	
+	@ApiOperation(value = "Actualiar informacion del calendario")
 	@PutMapping("/actualizar")
 	public ResponseEntity<?> actualizar(
 			@RequestBody Calendarios calendarios,
@@ -168,6 +179,8 @@ public class ControladorCalendarios {
 		return new ResponseEntity<Calendarios>(generico,HttpStatus.OK);
 	}
 
+	
+	@ApiOperation(value = "Eliminar un calendario")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> eliminar(
 			@PathVariable Long id,

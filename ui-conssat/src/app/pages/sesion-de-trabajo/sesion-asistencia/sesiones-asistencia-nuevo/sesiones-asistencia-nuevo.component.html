@@ -103,21 +103,22 @@
           <mat-card-content>
             <div class="row">
 
-              <div class="col-sd-6 col-md-3" *ngIf="!archivoAsistentes">
+              <div class="col-sd-6 col-md-4">
                 <form [formGroup]="adjuntarListaForm">
-                  <mat-form-field appearance="fill">
+                  <mat-form-field appearance="fill" *ngIf="!existArchivoAsistentes">
                     <mat-label>Adjuntar Lista de Asistencia</mat-label>
-                    <ngx-mat-file-input accept="application/pdf" placeholder="Adjuntar Lista de Asistencia" formControlName="descargarLista"
-                      [accept]="'.pdf'" required (change)="selectedFileDoc1($event)"></ngx-mat-file-input>
+                    <ngx-mat-file-input accept="application/pdf" placeholder="Adjuntar Lista de Asistencia"
+                      formControlName="descargarLista" [accept]="'.pdf'" required (change)="selectedFileDoc1($event)">
+                    </ngx-mat-file-input>
                     <mat-icon matSuffix>folder</mat-icon>
                   </mat-form-field>
+
+                  <mat-form-field appearance="fill" *ngIf="existArchivoAsistentes">
+                    <mat-label>Lista de asistencia</mat-label>
+                    <input matInput placeholder="" name="nombreLista" formControlName="nombreLista">
+                    <button mat-raised-button matSuffix color="warn" (click)="descargarArchivo()">Descargar</button>
+                  </mat-form-field>
                 </form>
-              </div>
-
-              <div class="col-sd-6 col-md-3" *ngIf="archivoAsistentes">
-
-                <button mat-raised-button matSuffix color="warn" (click)="descargarArchivo()">Descargar</button>
-
               </div>
 
               <div class="col-sd-6 col-md-7">

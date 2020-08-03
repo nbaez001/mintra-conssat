@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccionRow } from '../../models/accionRow';
-import { MatTable } from '@angular/material';
+import { MatTable, MatDialog } from '@angular/material';
 import { FileInput } from 'ngx-material-file-input';
 import Swal from 'sweetalert2';
 import { deleteConfig, saveConfig, decargaConfig } from '../../../../services/sweetAlertConfig';
@@ -15,6 +15,7 @@ import { EntidadAcuerdoActaResponse } from 'src/app/dto/response/AcuerdoActaSesi
 import { backendUrl } from 'src/app/common';
 import { FijasService } from 'src/app/services/fijas.service';
 import { HttpResponse } from '@angular/common/http';
+import { AccionEditarComponent } from '../accion-editar/accion-editar.component';
 
 @Component({
   selector: 'app-accion-realizada',
@@ -38,14 +39,15 @@ export class AccionRealizadaComponent implements OnInit, OnChanges {
 
   accionRealizadaForm: FormGroup;
 
-  displayedColumns: string[] = ['nro', 'acciones', 'responsable', 'registro', 'archivo', 'ejecuto', 'fecha', 'eliminar'];
+  displayedColumns: string[] = ['nro', 'acciones', 'responsable', 'registro', 'archivo', 'ejecuto', 'fecha', 'editar', 'eliminar'];
   @ViewChild(MatTable, { static: true }) table: MatTable<any>;
 
   constructor(private fb: FormBuilder, private spinner: NgxSpinnerService, private spinnerService: NgxSpinnerService,
-              private datePipe: DatePipe, private router: Router, private route: ActivatedRoute,
-              @Inject(SeguimientoAcuerdoService) private seguimientoAcuerdoService: SeguimientoAcuerdoService,
-              @Inject(SesionTrabajoService) private sesionTrabajoService: SesionTrabajoService,
-              @Inject(FijasService) private fijasService: FijasService) {
+    private datePipe: DatePipe, private router: Router, private route: ActivatedRoute,
+    private dialog: MatDialog,
+    @Inject(SeguimientoAcuerdoService) private seguimientoAcuerdoService: SeguimientoAcuerdoService,
+    @Inject(SesionTrabajoService) private sesionTrabajoService: SesionTrabajoService,
+    @Inject(FijasService) private fijasService: FijasService) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -203,4 +205,22 @@ export class AccionRealizadaComponent implements OnInit, OnChanges {
       }
     );
   }
+
+  editarRegistro(id: any) {
+    console.log('se redirecciona componente AccionEditarComponent');
+    const dialogRef = this.dialog.open(AccionEditarComponent, {
+      width: '900px',
+      height: '95%',
+      disableClose: true,
+      data: { idAccion: id }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result == 1) {
+        console.log(result);
+        this.listarAccion();
+      }
+    });
+  }
+
 }

@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile; 
+import org.springframework.web.multipart.MultipartFile;
+
+import io.swagger.annotations.ApiOperation;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Archivos;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.AsistenciaConsejeros;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Asistencias;
@@ -39,7 +41,7 @@ import pe.gob.mtpe.sivice.externo.core.negocio.service.FijasService;
 import pe.gob.mtpe.sivice.externo.core.negocio.service.InvitadoService;
 import pe.gob.mtpe.sivice.externo.core.util.ConstantesUtil;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "http://localhost:4200", "*" })
 @RestController
 @RequestMapping({ "/api/asistencia" })
 public class ControladorAsistencia {
@@ -66,6 +68,8 @@ public class ControladorAsistencia {
 	private String rutaRaiz;
 	
 	
+	
+	@ApiOperation(value = "Mostrar informacion de la sesion")
 	@GetMapping("/{idsesion}")
 	public ResponseEntity<?> buscarPorIdAsistencias(
 			@PathVariable Long idsesion,
@@ -91,6 +95,8 @@ public class ControladorAsistencia {
 		return new ResponseEntity<Sesiones>(sesion, HttpStatus.OK);
 	}
 
+	
+	@ApiOperation(value = "Listar asistentes por sesion")
 	@GetMapping("/listarasistentes/{idsesion}")
 	public List<AsistenciaConsejeros> buscarAsistencias(
 			@PathVariable Long idsesion, 
@@ -105,6 +111,8 @@ public class ControladorAsistencia {
 		return lista;
 	}
 
+	
+	@ApiOperation(value = "Marcar la asistencia")
 	@PutMapping("/actualizar")
 	public ResponseEntity<?> actualizarHoraAsistencia(
 			@RequestParam(value = "idAsistencia") Long idAsistencia,
@@ -140,6 +148,9 @@ public class ControladorAsistencia {
 		return new ResponseEntity<Asistencias>(generico, HttpStatus.OK);
 	}
 
+	
+	
+	@ApiOperation(value = "Mostra informacion de la asistencia por el codigo")
 	@GetMapping("/info/{idasistencia}")
 	public ResponseEntity<?> infoAsistente(
 			@PathVariable Long idasistencia,
@@ -199,6 +210,8 @@ public class ControladorAsistencia {
 		return new ResponseEntity<AsistenciaConsejeros>(infoAsistencia, HttpStatus.OK);
 	}
 
+	
+	@ApiOperation(value = "Registrar un invitado")
 	@PostMapping("/registrarinvitado")
 	public ResponseEntity<?> grabarInvitado(
 			@RequestParam(value = "entidad") Long entidad,
@@ -253,6 +266,8 @@ public class ControladorAsistencia {
 		return new ResponseEntity<Invitados>(generico, HttpStatus.OK);
 	}
 
+	
+	@ApiOperation(value = "Cargar archivo de asistencia")
 	@PostMapping("/cargardocasistencia")
 	public ResponseEntity<?> cargarArchivoAsistencias(
 			@RequestParam(value = "docasistencia") MultipartFile docasistencia,
@@ -264,31 +279,27 @@ public class ControladorAsistencia {
 		AsistenciasArchivos asistenciasArchivos = new AsistenciasArchivos();
 		Map<String, Object> response = new HashMap<>();
 		try {
+			
+			if (docasistencia!=null && docasistencia.getSize()>0) {
+				Archivos archivo = new Archivos();
+				archivo = archivoUtilitarioService.cargarArchivo(docasistencia, ConstantesUtil.C_CONSEJERO_DOC_ASIGNACION);
+				
+				if (archivo.isVerificarCarga() == true && archivo.isVerificarCarga() == true) {
+					asistenciasArchivos.setnOmbrearchivo(archivo.getNombre());
+					asistenciasArchivos.seteXtensionarchivo(archivo.getExtension());
+					asistenciasArchivos.setuBicacionarchivo(archivo.getUbicacion());
+					asistenciasArchivos.setsEsionfk(sesioncodigo);
+					asistenciasArchivos.setvFlgeliminado("0");
+				} else {
+					response.put(ConstantesUtil.X_MENSAJE, "ARCHIVO NO ADJUNTO");
+					response.put(ConstantesUtil.X_ERROR, "NO SE ENCONTRO EL ARCHIVO ADJUNTO");
+					response.put(ConstantesUtil.X_ENTIDAD, archivo);
+					return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 
-			if (docasistencia.isEmpty()) {
-				response.put(ConstantesUtil.X_MENSAJE, ConstantesUtil.CONSEJERO_MSG_DOCAPROBACION_VACIO);
-				response.put(ConstantesUtil.X_ERROR, ConstantesUtil.CONSEJERO_ERROR_DOCAPROBACION_VACIO);
-				response.put(ConstantesUtil.X_ENTIDAD, asistenciasArchivos);
-				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+				} 
 			}
 			
-			Archivos archivo = new Archivos();
-			archivo = archivoUtilitarioService.cargarArchivo(docasistencia, ConstantesUtil.C_CONSEJERO_DOC_ASIGNACION);
-			
-			if (archivo.isVerificarCarga() == true && archivo.isVerificarCarga() == true) {
-				asistenciasArchivos.setnOmbrearchivo(archivo.getNombre());
-				asistenciasArchivos.seteXtensionarchivo(archivo.getExtension());
-				asistenciasArchivos.setuBicacionarchivo(archivo.getUbicacion());
-				asistenciasArchivos.setsEsionfk(sesioncodigo);
-				asistenciasArchivos.setvFlgeliminado("0");
-			} else {
-				response.put(ConstantesUtil.X_MENSAJE, "ARCHIVO NO ADJUNTO");
-				response.put(ConstantesUtil.X_ERROR, "NO SE ENCONTRO EL ARCHIVO ADJUNTO");
-				response.put(ConstantesUtil.X_ENTIDAD, archivo);
-				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
-
-			}
-
+ 
 			asistenciasArchivos = asistenciasArchivoService.cargarArchivo(asistenciasArchivos);
 
 
@@ -305,8 +316,34 @@ public class ControladorAsistencia {
 	}
 	
 	
+	@ApiOperation(value = "Verifica si el archivo existe")
+	@GetMapping("/verificarasistencia/{idsesion}")
+	public ResponseEntity<?>  verificarArchivoAsistencia(
+			@PathVariable Long idsesion,
+			@RequestHeader(name = "id_usuario", required = true) Long idUsuario,
+			@RequestHeader(name = "info_regioncodigo", required = true) Long idRegion,
+			@RequestHeader(name = "info_rol", required = true) String nombreRol  ) {
+		
+		AsistenciasArchivos asistenciasArchivos = new AsistenciasArchivos();
+		Map<String, Object> response = new HashMap<>();
+		try {
+			asistenciasArchivos = asistenciasArchivoService.VerificarArchivo(idsesion);
+			 
+		} catch (DataAccessException e) {
+			response.put(ConstantesUtil.X_MENSAJE, ConstantesUtil.GENERAL_MSG_ERROR_BASE);
+			response.put(ConstantesUtil.X_ERROR,
+					e.getMessage().concat(":").concat(e.getMostSpecificCause().getMessage()));
+			response.put(ConstantesUtil.X_ENTIDAD, asistenciasArchivos);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<AsistenciasArchivos>(asistenciasArchivos, HttpStatus.OK);
+
+	}
 	
 	
+	
+	@ApiOperation(value = "Descargar archivo de asistencia")
 	@GetMapping("/descargar/{idsesion}")
 	public void descargarArchivo(
 			@PathVariable Long idsesion,

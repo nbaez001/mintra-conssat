@@ -11,10 +11,20 @@ import { CustomMaterialModule } from 'src/app/core/material.module';
 import { SharedModule } from 'src/app/core/shared.module';
 import { MenuService } from 'src/app/services/menu.service';
 import { MAT_DATE_LOCALE } from '@angular/material';
+import { BuscarComisionComponent } from '../informes-anuales/informes-anuales-nuevo/buscar-comision/buscar-comision.component';
+import { BuscarNroSesionComponent } from '../informes-anuales/informes-anuales-nuevo/buscar-nro-sesion/buscar-nro-sesion.component';
 
 
 @NgModule({
+  entryComponents:[
+    BuscarComisionComponent,
+    BuscarNroSesionComponent,
+  ],
   declarations: [
+    BuscarComisionComponent,
+    BuscarNroSesionComponent,
+
+
     FooterComponent,
     HeaderComponent,
     PanelComponent,
@@ -29,10 +39,10 @@ import { MAT_DATE_LOCALE } from '@angular/material';
   ],
   providers:[
     // MenuService,
-    
+
     DatePipe,
     DecimalPipe,
-    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },//DATEPICKER MUESTRA LA FECHA EN FORMATO DD/MM/YYYY
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }, // DATEPICKER MUESTRA LA FECHA EN FORMATO DD/MM/YYYY
   ]
 })
 export class PanelModule { }

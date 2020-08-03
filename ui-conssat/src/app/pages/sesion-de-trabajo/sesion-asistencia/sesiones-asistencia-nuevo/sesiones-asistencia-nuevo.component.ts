@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
-import { saveConfig, decargaConfig } from '../../../../services/sweetAlertConfig';
+import { saveConfig, decargaConfig, errorConfig } from '../../../../services/sweetAlertConfig';
 import { AsistenciaSesionTrabajoResponse } from 'src/app/dto/response/AsistenciaSesionTrabajo.response';
 import { SesionTrabajoService } from 'src/app/services/sesion-trabajo.service';
 import { SesionTrabajoResponse } from 'src/app/dto/response/SesionTrabajo.response';
@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material';
 import { RegistroAsistenteComponent } from './registro-asistente/registro-asistente.component';
 import { InformacionAsistenteComponent } from './informacion-asistente/informacion-asistente.component';
 import { AdjuntarArchivoResponse } from 'src/app/dto/response/AdjuntarArchivo.response';
+import { HttpResponse } from '@angular/common/http';
 
 interface ParticipanteRow {
   id: number;
@@ -49,11 +50,11 @@ export class SesionesAsistenciaNuevoComponent implements OnInit {
 
   private selectedfile1: File;
 
-  archivoAsistentes: any;
+  existArchivoAsistentes: boolean = false;
 
   constructor(public asistente: MatDialog, private fb: FormBuilder, private spinnerService: NgxSpinnerService, private router: Router,
-              private route: ActivatedRoute,
-              @Inject(SesionTrabajoService) private sesionTrabajoService: SesionTrabajoService) {
+    private route: ActivatedRoute,
+    @Inject(SesionTrabajoService) private sesionTrabajoService: SesionTrabajoService) {
   }
 
   ngOnInit() {
@@ -80,12 +81,13 @@ export class SesionesAsistenciaNuevoComponent implements OnInit {
 
     this.adjuntarListaForm = this.fb.group({
       descargarLista: ['', Validators.required],
+      nombreLista: ['', []],
     });
 
     // this.loadDatosDeSesion();
     this.AsistenciaSesionTrabajoPorId();
     this.listarAsistenciaSesionTrabajo();
-    // this.consultarArchivoAsistentes();
+    this.consultarArchivoAsistentes();
   }
 
   abrirRegistroAsistente() {
@@ -157,8 +159,6 @@ export class SesionesAsistenciaNuevoComponent implements OnInit {
     );
   }
 
-
-
   guardar() {
     this.spinnerService.show();
     setTimeout(() => {
@@ -221,26 +221,38 @@ export class SesionesAsistenciaNuevoComponent implements OnInit {
   }
 
   descargarArchivo() {
-
-
-  }
-
-  consultarArchivoAsistentes() {
+    this.spinnerService.show();
     this.sesionTrabajoService.decargarDocAsistentes(this.id).subscribe(
-      (data: any) => {
+      (data: HttpResponse<Blob>) => {
         console.log('aqui estoy imprimiendo la data');
         console.log(data);
-        // Swal.fire(decargaConfig);
-        // this.archivoAsistentes = this.sesionTrabajoService.crearBlobFile(data);
-        this.archivoAsistentes = new Blob([data], { type: 'application/pdf' });
-        const link = document.createElement('a');
-        link.target = '_blank';
-        link.href = window.URL.createObjectURL(this.archivoAsistentes);
-        link.click();
+        this.spinnerService.hide();
+        this.sesionTrabajoService.descargarArchivo(data.body);
       },
       error => {
         console.error(error);
-        // Swal.fire(errorConfig);
+        Swal.fire(errorConfig);
+      });
+  }
+
+  consultarArchivoAsistentes() {
+    console.log('INGRESO VERIFICACION SISTENTES');
+    this.sesionTrabajoService.verificarDocAsistentes(this.id).subscribe(
+      (data: any) => {
+        if (data) {
+          if (data.nOmbrearchivo) {
+            this.existArchivoAsistentes = true;
+            this.adjuntarListaForm.get('nombreLista').setValue(data.nOmbrearchivo + '.' + data.eXtensionarchivo)
+          } else {
+            this.existArchivoAsistentes = false;
+          }
+        } else {
+          this.existArchivoAsistentes = false;
+        }
+      },
+      error => {
+        console.error(error);
+        this.existArchivoAsistentes = false;
       });
   }
 

@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +28,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import io.swagger.annotations.ApiOperation;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Actas;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Acuerdos;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Archivos;
+import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Consejos;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Entidades;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Firmantes;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Sesiones;
@@ -38,7 +43,7 @@ import pe.gob.mtpe.sivice.externo.core.negocio.service.ArchivoUtilitarioService;
 import pe.gob.mtpe.sivice.externo.core.util.ConstantesUtil;
 import pe.gob.mtpe.sivice.externo.core.util.FechasUtil;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "http://localhost:4200", "*" })
 @RestController
 @RequestMapping({"/api/actas"})
 public class ControladorActas {
@@ -88,6 +93,7 @@ public class ControladorActas {
 	}
 	*/
  
+	@ApiOperation(value = "Muestra la informacion de la sesion en la cabecera del acta")
 	@GetMapping("/actaporsesion/{idsesion}")   //CUERPO DEL ACTA POR SESION
 	ResponseEntity<?> actasPorSesion(
 			@PathVariable Long idsesion,
@@ -118,7 +124,7 @@ public class ControladorActas {
 	
 	
 	
-	
+	@ApiOperation(value = "Lista Todos los acuerdos del acta")
 	@GetMapping("/listaracuerdosporacta/{idsesion}")  //CUERPO LISTA DE ACUERDOS POR ACTA
 	List<Acuerdos> listaAcuerdosPorActa(
 			@PathVariable Long idsesion,
@@ -137,6 +143,7 @@ public class ControladorActas {
 		return listarAcuerdos;
 	}
 	
+	@ApiOperation(value = "Muestra la informacion del acta")
 	@GetMapping("/{idacta}")  //CABECERA DEL ACTA (INFORMACION DE LA SESION)
 	public ResponseEntity<?> cabeceraActa(
 			@PathVariable Long idacta,
@@ -160,6 +167,7 @@ public class ControladorActas {
 	}
 	
 	
+	@ApiOperation(value = "Registra el acuerdo del acta")
 	@PostMapping("/registraracuerdos")               //REGISTRAR LOS ACUERDOS
 	public ResponseEntity<?> registrarAcuerdo(
 			@RequestParam("actafk")        Long actafk,
@@ -208,7 +216,7 @@ public class ControladorActas {
 		return new ResponseEntity<Acuerdos>(acuerdo, HttpStatus.OK);
 	}
 	
-	
+	@ApiOperation(value = "Lista los firmantes o los registra obteniendolos de los asistentes de la sesion")
 	@GetMapping("/listarfirmantesporacta/{idsesion}")           //LISTAMOS LOS FIRMANTES O REGISTRAMOS
 	List<Firmantes> listarFirmantesPorActa(
 			@PathVariable Long idsesion,
@@ -221,6 +229,7 @@ public class ControladorActas {
 	}
 	
 	
+	@ApiOperation(value = "Marca la asistencia del firmante")
 	@PutMapping("/actualizarfirmante")
 	public ResponseEntity<?> actualizar(
 			@RequestParam("fIrmanteidpk")     Long   fIrmanteidpk,
@@ -258,7 +267,7 @@ public class ControladorActas {
 	
 	
 	
-
+	@ApiOperation(value = "Obtiene la informacion de un acta")
 	@GetMapping("/infoacta/{id}")
 	public ResponseEntity<?> buscarPorId(
 			@PathVariable Long id,
@@ -290,6 +299,7 @@ public class ControladorActas {
 		return new ResponseEntity<Actas>(actas, HttpStatus.OK);
 	}
 
+	@ApiOperation(value = "Buasca el actas por los criterios de busqueda")
 	@PostMapping("/buscar")
 	public List<Actas> buscarActas(
 			@RequestBody Actas buscar,
@@ -300,6 +310,7 @@ public class ControladorActas {
 		return actaService.buscar(buscar);
 	}
 
+	@ApiOperation(value = "Actualiza la informacion de un acta")
 	@PutMapping("/actualizar")
 	public ResponseEntity<?> actualizarActas(
 			@RequestBody Actas acta,
@@ -335,6 +346,7 @@ public class ControladorActas {
 
 	}
 
+	@ApiOperation(value = "Elimina el registro de un acta")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> eliminarActas(
 			@PathVariable Long id,
@@ -369,6 +381,7 @@ public class ControladorActas {
 
 	}
 
+	@ApiOperation(value = "Registra un acta")
 	@PostMapping("/registrar")
 	public ResponseEntity<?> registrar(
 			@RequestParam("docacta") MultipartFile docacta,
@@ -414,6 +427,7 @@ public class ControladorActas {
 		return new ResponseEntity<Actas>(generico, HttpStatus.OK);
 	}
 
+	@ApiOperation(value = "Descarga el archivo del acta")
 	@GetMapping("/descargar/{id}")
 	public void descargarArchivo(
 			@PathVariable Long id, 
@@ -432,6 +446,7 @@ public class ControladorActas {
 
 	}
 	
+	@ApiOperation(value = "Busca el temas del acta por la sesion seleccionada")
 	@PostMapping("/buscartemasporsesion")
 	public List<Actas> buscarTemasPorSesion(
 			@RequestBody Actas actas,
@@ -441,6 +456,7 @@ public class ControladorActas {
 		return actaService.buscarActasPorSesion(actas);
 	}
 	
+	@ApiOperation(value = "Lista las actas por sesion")
 	@PostMapping("/listarActasPorSesion")
 	public List<Actas> listarActasPorSesion(
 			@RequestBody Actas actas,
@@ -449,6 +465,12 @@ public class ControladorActas {
 			@RequestHeader(name = "info_rol", required = true) String nombreRol){
 		 actas.setNregion(idRegion);
 		 actas.setnUsureg(idUsuario);
+		 actas.setnTipoConsejo(fijasDao.BuscarConsejoPorNombre(nombreRol));
+		// Consejos consejos = new Consejos();
+	    // consejos.setcOnsejoidpk(fijasDao.BuscarConsejoPorNombre(nombreRol));
+	     
+	    
+	   
 		return actaService.listarActasPorSesion(actas);
 	}
 	

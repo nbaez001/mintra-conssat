@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "TBX_INVITADOS",schema="DB_TRAMITE")
+@Table(name = "TBX_INVITADOS")
 public class Invitados implements Serializable {
 
 	/**

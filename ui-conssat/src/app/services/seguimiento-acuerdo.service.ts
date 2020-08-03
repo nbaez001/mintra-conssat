@@ -109,6 +109,30 @@ export class SeguimientoAcuerdoService {
     return this.http.post<AccionesResponse>(`${backendUrl}api/acciones/registrar`, formData, httpOptions);
   }
 
+  public buscarAccionPorId(idAccion: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        authorization: 'Bearer ' + Cookie.get('access_token_fc'),
+        id_usuario: Cookie.get('idusuario'),
+        info_regioncodigo: Cookie.get('inforegioncodigo'),
+        info_rol: Cookie.get('idrol')
+      })
+    };
+    return this.http.get<any>(`${backendUrl}api/acciones/${idAccion}`, httpOptions);
+  }
+
+  public actualizarAccionRealizada(formData: FormData): Observable<AccionesResponse> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        authorization: 'Bearer ' + Cookie.get('access_token_fc'),
+        id_usuario: Cookie.get('idusuario'),
+        info_regioncodigo: Cookie.get('inforegioncodigo'),
+        info_rol: Cookie.get('idrol')
+      })
+    };
+    return this.http.put<AccionesResponse>(`${backendUrl}api/acciones/actualizar`, formData, httpOptions);
+  }
+
   public eliminarAccionRealizada(id: number): Observable<AccionesResponse> {
     const httpOptions = {
       headers: new HttpHeaders({

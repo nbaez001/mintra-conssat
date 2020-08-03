@@ -56,9 +56,9 @@ export class CalendariosEditarComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private spinnerService: NgxSpinnerService, private router: Router,
 
-              private route: ActivatedRoute, public dialog: MatDialog,
-              private datePipe: DatePipe, public comisiones: MatDialog,
-              @Inject(CalendarioActividadesService) private calendarioActividadesService: CalendarioActividadesService) {
+    private route: ActivatedRoute, public dialog: MatDialog,
+    private datePipe: DatePipe, public comisiones: MatDialog,
+    @Inject(CalendarioActividadesService) private calendarioActividadesService: CalendarioActividadesService) {
   }
 
   ngOnInit() {
@@ -66,28 +66,13 @@ export class CalendariosEditarComponent implements OnInit {
       this.id = +params.id;
     });
 
-    this.spinnerService.show();
-    setTimeout(() => {
-      this.spinnerService.hide();
-      // INICIA EL FORMUALRIO AQUI
-
-      // this.actividadForm.setValue({
-      //   actividad: 'VOLUNTARIADO SERVIR',
-      //   fecha: new Date(),
-      //   horaInicio: '3:00 PM',
-      //   horaTermino: '4:00 PM',
-      //   fueEjecutado: true,
-      //   comentario: 'La actividad se realizó en presencia el secretario general',
-      // });
-
-    }, 800);
-
     this.actividadForm = this.fb.group({
       actividad: ['', Validators.required],
       fecha: ['', Validators.required],
       horaInicio: ['', Validators.required],
       horaTermino: ['', Validators.required],
       fueEjecutado: ['', Validators.required],
+      fechaEjecucion: ['', Validators.required],
       comentario: ['', Validators.required],
       comision: [''],
     });
@@ -107,7 +92,8 @@ export class CalendariosEditarComponent implements OnInit {
           fecha: data.dFecactividad ? new Date(data.dFecactividad.toString().replace(/(\d{2})-(\d{2})-(\d{4})/, '$2/$1/$3')) : '',
           horaInicio: data.vHorainicio,
           horaTermino: data.vHorafin,
-          fueEjecutado: data.cFlgejecuto,
+          fueEjecutado: data.cFlgejecuto == '0' ? false : true,
+          fechaEjecucion: data.dFecejecuto ? new Date(data.dFecejecuto.toString().replace(/(\d{2})-(\d{2})-(\d{4})/, '$2/$1/$3')) : '',
           comentario: data.vDesejecucion,
           comision: data.cOmisionfk,
         });
@@ -128,6 +114,7 @@ export class CalendariosEditarComponent implements OnInit {
     req.vHorainicio = this.actividadForm.get('horaInicio').value;
     req.vHorafin = this.actividadForm.get('horaTermino').value;
     req.cFlgejecuto = this.actividadForm.get('fueEjecutado').value === true ? '1' : '0';
+    req.dFecejecuto = this.datePipe.transform(this.actividadForm.get('fechaEjecucion').value, 'dd-MM-yyyy');
     req.vDesejecucion = this.actividadForm.get('comentario').value;
 
     this.spinnerService.show();
@@ -203,13 +190,13 @@ export class CalendariosEditarComponent implements OnInit {
     );
   }
   verificarcookies() {
-    if (!Cookie.get('inforegioncodigo') ) {
+    if (!Cookie.get('inforegioncodigo')) {
       this.router.navigate(['/login']);
     }
   }
   verificarrol() {
     if (Cookie.get('idrol') === 'ROLE_OPECONSSAT' || Cookie.get('idrol') === 'ROLE_OPECORSSAT') {
-       return true;
+      return true;
     } else {
       return false;
     }

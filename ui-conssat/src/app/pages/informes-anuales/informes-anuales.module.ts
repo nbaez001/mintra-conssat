@@ -14,16 +14,16 @@ import { SHARED_SERVICE } from 'src/app/services';
 
 @NgModule({
   entryComponents: [
-    BuscarComisionComponent,
-    BuscarNroSesionComponent
+    // BuscarComisionComponent,
+    // BuscarNroSesionComponent
   ],
   declarations: [
     InformesAnualesNuevoComponent,
     InformesAnualesEditarComponent,
     InformesAnualesVerComponent,
     InformesAnualesComponent,
-    BuscarComisionComponent,
-    BuscarNroSesionComponent
+    // BuscarComisionComponent,
+    // BuscarNroSesionComponent
   ],
   imports: [
     CommonModule,

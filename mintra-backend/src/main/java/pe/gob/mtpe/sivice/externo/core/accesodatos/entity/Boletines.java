@@ -18,7 +18,7 @@ import javax.persistence.Transient;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "TBX_BOLETINES",schema="DB_TRAMITE")
+@Table(name = "TBX_BOLETINES")
 public class Boletines implements Serializable {
 
 	/**

@@ -7,7 +7,7 @@ import { SeguimientoComponent } from './seguimiento/seguimiento.component';
 const routes: Routes = [
   { path: '', component: SeguimientoComponent },
   { path: ':idSesion/acta/:idActa/acuerdo/:idAcuerdo/accion/nuevo', component: SeguimientoActaComponent },
-  { path: ':idSesion/acta/:idActa/acuerdos', component: SeguimientoAcuerdosPorActaComponent },
+  { path: ':idSesion/acta/:idActa/acuerdos', component: SeguimientoAcuerdosPorActaComponent }
 ];
 
 @NgModule({

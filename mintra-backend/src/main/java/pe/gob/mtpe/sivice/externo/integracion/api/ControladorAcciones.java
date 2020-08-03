@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,23 +19,24 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping; 
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import io.swagger.annotations.ApiOperation;
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Acciones; 
 import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Archivos;
+import pe.gob.mtpe.sivice.externo.core.accesodatos.entity.Entidades;
 import pe.gob.mtpe.sivice.externo.core.negocio.service.AccionesService;
 import pe.gob.mtpe.sivice.externo.core.negocio.service.ArchivoUtilitarioService;
 import pe.gob.mtpe.sivice.externo.core.util.ConstantesUtil;
 import pe.gob.mtpe.sivice.externo.core.util.FechasUtil;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "http://localhost:4200", "*"})
 @RestController
-@RequestMapping({ "api/acciones" })
+@RequestMapping({ "api/acciones"})
 public class ControladorAcciones {
 
 	private static final Logger logger = LoggerFactory.getLogger(ControladorAcciones.class);
@@ -52,11 +51,15 @@ public class ControladorAcciones {
 	@Value("${rutaArchivo}")
 	private String rutaRaiz;
 
+	/*
+	@ApiOperation(value = "Obtiene Todas las acciones que se registran en un acuerdo")
 	@GetMapping("/")
 	public List<Acciones> listar() {
 		return accionesService.listar();
 	}
-
+     */
+	
+	@ApiOperation(value = "Obtiene la Informacion de una accion por su Codigo Unico")
 	@GetMapping("/{id}")
 	public ResponseEntity<?> buscarSeguimientos(
 			@PathVariable Long id,
@@ -85,16 +88,17 @@ public class ControladorAcciones {
 		return new ResponseEntity<Acciones>(generico,HttpStatus.OK);
 	}
 
+	/* 
 	@PostMapping("/buscar")
 	public List<Acciones> buscar(@RequestBody Acciones buscar,
 			@RequestHeader(name = "id_usuario", required = true) Long idUsuario,
 			@RequestHeader(name = "info_regioncodigo", required = true) Long idRegion,
 			@RequestHeader(name = "info_rol", required = true) String nombreRol) {
 		return accionesService.buscar(buscar);
-	}
+	} */
 
 	
-
+	@ApiOperation(value = "Registra una accion para el acuerdo")
 	@PostMapping("/registrar")
 	public ResponseEntity<?> registrar(
 	     @RequestParam(value = "idacuerdo")          Long idacuerdo,
@@ -104,7 +108,8 @@ public class ControladorAcciones {
 	     @RequestParam(value = "fecha_ejecutara")    String fecha_ejecutara,
 	     @RequestParam(value = "flgejecuto")         String flgejecuto,
 	     @RequestParam(value = "fecha_ejecuto")      String fecha_ejecuto,
-	     @RequestParam(value = "docaccion")          MultipartFile docaccion,@RequestHeader(name = "id_usuario", required = true) Long idUsuario,
+	     @RequestParam(value = "docaccion")          MultipartFile docaccion,
+	     @RequestHeader(name = "id_usuario", required = true) Long idUsuario,
 		 @RequestHeader(name = "info_regioncodigo", required = true) Long idRegion,
 		 @RequestHeader(name = "info_rol", required = true) String nombreRol
 	) {
@@ -122,15 +127,20 @@ public class ControladorAcciones {
 		return new ResponseEntity<Acciones>(generico,HttpStatus.CREATED);
 	}
 
+	@ApiOperation(value = "Actualiza una accion")
 	@PutMapping("/actualizar")
 	public ResponseEntity<?> actualizar(
-			@RequestParam(value = "idaccion")      Long idaccion, 
+			@RequestParam(value = "idaccion")           Long idaccion,
+			@RequestParam(value = "identidad")          Long identidad,
+		    @RequestParam(value = "responsable")        String responsable,
+		    @RequestParam(value = "descripcionaccion")  String descripcionaccion,
+		    @RequestParam(value = "fecha_ejecutara")    String fecha_ejecutara,
 			@RequestParam(value = "flgejecuto")         String flgejecuto,
-			@RequestParam(value = "fecha_ejecuto") String fecha_ejecuto,
-			@RequestParam(value = "docaccion")      MultipartFile docaccion,
-			@RequestHeader(name = "id_usuario", required = true) Long idUsuario,
+			@RequestParam(value = "fecha_ejecuto")      String fecha_ejecuto,
+			@RequestParam(value = "docaccion", required = false)          MultipartFile docaccion,
+			@RequestHeader(name = "id_usuario", required = true)        Long idUsuario,
 			@RequestHeader(name = "info_regioncodigo", required = true) Long idRegion,
-			@RequestHeader(name = "info_rol", required = true) String nombreRol
+			@RequestHeader(name = "info_rol", required = true)          String nombreRol
 			) {
 		Acciones generico = new Acciones();
 		Map<String, Object> response = new HashMap<>();
@@ -144,7 +154,9 @@ public class ControladorAcciones {
 				response.put(ConstantesUtil.X_ENTIDAD, generico);
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND); 
 			}
-			 if(!docaccion.isEmpty()) {
+			
+			
+			 if(docaccion!=null && docaccion.getSize()>0) {
 				 Archivos archivo = new Archivos();
 				 archivo = archivoUtilitarioService.cargarArchivo(docaccion, ConstantesUtil.C_CONSEJERO_DOC_ASIGNACION);
 				 if (archivo.isVerificarCarga() == true && archivo.isVerificarCarga() == true) {
@@ -153,8 +165,17 @@ public class ControladorAcciones {
 					 generico.setvExtarchivo(archivo.getExtension());
 				 }
 			 }
-			generico.setdFecejecuto(FechasUtil.convertStringToDate(fecha_ejecuto));
-			generico = accionesService.Actualizar(generico);
+			 
+			 Entidades entidades = new Entidades();
+			 entidades.seteNtidadidpk(identidad);
+			
+			 generico.setEntidad(entidades);
+			 generico.setvResponsable(responsable);
+			 generico.setvDesaccion(descripcionaccion);
+			 generico.setdFecejecutara( (fecha_ejecutara!=null)? FechasUtil.convertStringToDate(fecha_ejecutara) : null );
+			 generico.setcFlgejecuto(flgejecuto);
+			 generico.setdFecejecuto( (fecha_ejecuto!=null)? FechasUtil.convertStringToDate(fecha_ejecuto) : null );
+			 generico = accionesService.Actualizar(generico);
 
 		} catch (DataAccessException e) {
 			response.put(ConstantesUtil.X_MENSAJE, ConstantesUtil.GENERAL_MSG_ERROR_BASE);
@@ -164,8 +185,9 @@ public class ControladorAcciones {
 		}  
 		
 		return new ResponseEntity<Acciones>(generico,HttpStatus.OK);
-	}
+	}  
 
+	@ApiOperation(value = "Elimina una accion registrada para el acuerdo")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> eliminar(
 			@PathVariable Long id,
@@ -200,6 +222,7 @@ public class ControladorAcciones {
 
 	}
 	
+	@ApiOperation(value = "Lista todas las acciones que se registraron en el acuerdo")
 	@GetMapping("/accionesporacuerdo/{idacuerdo}")
 	public List<Acciones> listarAccionesPorAcuerdo(
 			@PathVariable Long idacuerdo,
@@ -212,6 +235,7 @@ public class ControladorAcciones {
 	}
 	
 	
+	@ApiOperation(value = "Descarga el archivo adjunto")
 	@GetMapping("/descargar/{id}")
 	public void descargarArchivo(
 			@PathVariable Long id, HttpServletResponse res) {

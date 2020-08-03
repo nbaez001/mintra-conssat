@@ -9,15 +9,20 @@ import { SeguimientoAcuerdosPorActaComponent } from './seguimiento-acuerdos-por-
 import { SharedModule } from 'src/app/core/shared.module';
 import { SeguimientoDeAcuerdosRoutingModule } from './seguimiento-de-acuerdos-routing.module';
 import { SHARED_SERVICE } from 'src/app/services';
+import { AccionEditarComponent } from './componentes/accion-editar/accion-editar.component';
 
 
 @NgModule({
+  entryComponents:[
+    AccionEditarComponent,
+  ],
   declarations: [
     SeguimientoComponent,
     SeguimientoActaComponent,
     DatosDeSesionComponent,
     AccionRealizadaComponent,
-    SeguimientoAcuerdosPorActaComponent
+    SeguimientoAcuerdosPorActaComponent,
+    AccionEditarComponent,
   ],
   imports: [
     CommonModule,

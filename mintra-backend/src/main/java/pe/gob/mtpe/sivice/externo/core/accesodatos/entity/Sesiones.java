@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat; 
 
 @Entity
-@Table(name = "TBC_SESIONES",schema="DB_TRAMITE")
+@Table(name = "TBC_SESIONES")
 public class Sesiones implements Serializable {
 
 	/**
